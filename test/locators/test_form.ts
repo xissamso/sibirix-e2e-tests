@@ -20,9 +20,17 @@ export class Test_form {
     get submitButton () {
         return $(this._root + "/descendant::*[@type= 'submit']")
     }
-    //*[@class = 'form-wrapper']
+
     get formMessage () {
         return $(this._root + "/descendant::*[@class='form-wrapper']")
+    }
+
+    get fileInput () {
+        return $(this._root + "/descendant::*[@class = 'file-input']")
+    }
+
+    errorMsg = ( item: number ) => {
+        return $(this._root + `/descendant::*[@class = 'error-message'][${item}]`);
     }
 
 }
